@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <button class="menu-toggle">&#9776;</button>
     <div class="left-menu">
@@ -39,23 +41,366 @@
                 </div>
             </div>
         </header>
-        
 
-        <h1>Thông tin tài khoản</h1>
-        <p>Chào mừng bạn đến với trang thông tin tài khoản của bạn!</p>
+        <div class="account-info">
+            <div class="user-details">
+                <div class="avatar-user">
+                    <img src="../img/avt-3.png" alt="Avatar" />
+                </div>
+                <div class="user-info">
+                    <h3>Admin</h3>
+                    <p>Email: admin@gmail.com</p>
+                </div>
+            </div>
+            <div class="account-stats">
+                <div class="stat">
+                    <h4><i class="fas fa-wallet"></i> Số dư</h4>
+                    <p>1,000,000 VNĐ</p>
+                </div>
+                <div class="stat">
+                    <h4><i class="fas fa-sim-card"></i> Tổng code đã thuê</h4>
+                    <p>15</p>
+                </div>
+                <div class="stat">
+                    <h4><i class="fas fa-clock"></i> Lần cuối thuê</h4>
+                    <p>15/01/2025</p>
+                </div>
+            </div>
+
+            <div class="horizontal-menu">
+                <ul>
+                    <li><a href="#" data-target="overview">Tổng quan</a></li>
+                    <li><a href="#" data-target="security">Bảo mật</a></li>
+                    <li><a href="#" data-target="commission">Hoa hồng</a></li>
+                    <li><a href="#" data-target="api">API</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="menu-content">
+            <div id="overview" class="content-section">
+                <div id="user-info">
+                    <h2>Thông tin tài khoản</h2>
+                    <div class="info-row">
+                        <strong>Họ và tên:</strong>
+                        <span id="full-name">Admin</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>Tên đăng nhập:</strong>
+                        <span id="username">admin</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>Email:</strong>
+                        <span id="email">admin@gmail.com</span>
+                    </div>
+                    <div class="info-row">
+                        <strong>Số điện thoại:</strong>
+                        <span id="phone">0123456789</span>
+                    </div>
+                    <button id="edit-button" onclick="toggleEditForm()">Cập nhật thông tin</button>
+                </div>
+
+
+
+                <form id="edit-form" action="#" method="POST" class="account-form" style="display: none;">
+                    <h2>Thông tin tài khoản</h2>
+
+                    <div class="form-group">
+                        <label for="full-name">Họ và tên</label>
+                        <input type="text" id="full-name" name="full-name" value="Nguyễn Văn A" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Tên đăng nhập</label>
+                        <input type="text" id="username" name="username" value="nguyenvanda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="admin@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="tel" id="phone" name="phone" value="0123456789" required>
+                    </div>
+                    <button type="submit" class="update-button">Cập nhật thông tin</button>
+                    <button type="button" class="cancel-button" onclick="toggleEditForm()">Hủy</button>
+                </form>
+</div>
+            <div id="security" class="content-section">
+                <h2>Bảo mật</h2>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-container">
+                        <input type="email" id="email" placeholder="admin@gmail.com" readonly />
+                        <button id="verify-email">Xác thực email</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <div class="input-container" id="password-container">
+                        <span id="password-text">********</span>
+                        <button id="change-password">Đổi mật khẩu</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form đổi mật khẩu (ban đầu ẩn) -->
+            <div id="password-change-form-container" style="display: none;">
+                <form id="password-change-form">
+                    <div class="form-group">
+                        <label for="current-password">Mật khẩu hiện tại</label>
+                        <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Mật khẩu mới</label>
+                        <input type="password" id="new-password" placeholder="Nhập mật khẩu mới" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-new-password">Nhập lại mật khẩu mới</label>
+                        <input type="password" id="confirm-new-password" placeholder="Nhập lại mật khẩu mới" required />
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Đổi mật khẩu</button>
+                        <button type="button" id="cancel-password-change">Hủy</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal Dialog Xác thực Email -->
+            <div id="email-verification-dialog" class="modal">
+                <div class="modal-content">
+                    <h3>Xác thực email</h3>
+                    <form id="email-verification-form">
+                        <div class="form-group">
+                            <label for="verification-email">Nhập lại email</label>
+                            <input type="email" id="verification-email" placeholder="admin@gmail.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="verification-code">Mã xác nhận</label>
+                            <input type="text" id="verification-code" placeholder="Nhập mã" required />
+                            <button type="button" id="get-verification-code">Lấy mã</button>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" id="confirm-verification">Xác nhận</button>
+                            <button type="button" id="cancel-verification">Hủy</button>
+                        </div>
+                    </form>
+                </div>
+                
+        </div>
+        <div id="password-change-form-container" style="display: none;">
+            <form id="password-change-form">
+                <div class="form-group">
+                    <label for="current-password">Mật khẩu hiện tại</label>
+                    <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại"
+                        required />
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Mật khẩu mới</label>
+                    <input type="password" id="new-password" placeholder="Nhập mật khẩu mới" required />
+                </div>
+                <div class="form-group">
+                    <label for="confirm-new-password">Nhập lại mật khẩu mới</label>
+                    <input type="password" id="confirm-new-password" placeholder="Nhập lại mật khẩu mới"
+                        required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Đổi mật khẩu</button>
+                    <button type="button" id="cancel-password-change">Hủy</button>
+                </div>
+            </form>
+        </div>
+        <div id="commission" class="content-section">
+            <h2>Hoa hồng</h2>
+            <div id="commission">
+                <!-- Giới thiệu bạn bè và Thông tin -->
+                <div class="commission-info">
+                    <div class="left">
+                        <h3>Giới thiệu bạn bè nhận thưởng</h3>
+                        <p>Thông tin và thể lệ</p>
+                        <p>Giới thiệu bạn bè thành công, bạn có thể được hưởng tối đa 4% số tiền mà bạn bè đã nạp.</p>
+                    </div>
+                    <div class="right">
+                        <h4>Link giới thiệu</h4>
+                        <a href="#" id="referral-link">https://example.com/referral</a>
+                    </div>
+                </div>
+            
+                <!-- Thống kê hoa hồng -->
+                <div class="commission-statistics">
+                    <div class="stat-box">
+                        <h5>Tổng Hoa Hồng Đã Nhận</h5>
+                        <p>0 VNĐ</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>Hoa Hồng Tuần Này</h5>
+                        <p>0 VNĐ</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>Số Người Đã Giới Thiệu</h5>
+                        <p>0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>Được Giới Thiệu Bởi</h5>
+                        <p>Người khác</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="api" class="content-section">
+            <h2>API</h2>
+            <button onclick="openApiDocs()" id="btn-api">Tài liệu API</button>
+
+            <div id="api-docs-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeApiDocs()">&times;</span>
+                    <h3>Tài liệu API</h3>
+                    <p>API này hỗ trợ các tính năng sau:</p>
+                    <ul>
+                        <li><strong>GET /api/users:</strong> Lấy danh sách người dùng.</li>
+                        <li><strong>POST /api/login:</strong> Đăng nhập với email và mật khẩu.</li>
+                        <li><strong>POST /api/register:</strong> Đăng ký người dùng mới.</li>
+                    </ul>
+                    <p>Vui lòng sử dụng Bearer token để xác thực yêu cầu.</p>
+                </div>
+            </div>
+
+            <h3>Token API </h3>
+            <pre>
+<code>
+Bearer fake-token-1234567890abcdef
+</code>
+</pre>
+        </div>
     </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggleButton = document.querySelector('.menu-toggle');
+                const leftMenu = document.querySelector('.left-menu');
+                const content = document.querySelector('.content');
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggleButton = document.querySelector('.menu-toggle');
-            const leftMenu = document.querySelector('.left-menu');
-            const content = document.querySelector('.content');
+                toggleButton.addEventListener('click', () => {
+                    leftMenu.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                });
 
-            toggleButton.addEventListener('click', () => {
-                leftMenu.classList.toggle('collapsed');
-                content.classList.toggle('collapsed');
+                const menuLinks = document.querySelectorAll('.horizontal-menu a');
+                const contentSections = document.querySelectorAll('.content-section');
+
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        const target = link.getAttribute('data-target');
+
+                        contentSections.forEach(section => {
+                            if (section.id === target) {
+                                section.style.display = 'block';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+
+                document.querySelector('.horizontal-menu a').click();
             });
-        });
-    </script>
+
+            function toggleEditForm() {
+                const userInfo = document.getElementById('user-info');
+                const editForm = document.getElementById('edit-form');
+                const editButton = document.getElementById('edit-button');
+
+                if (userInfo.style.display === 'none') {
+                    userInfo.style.display = 'block';
+                    editForm.style.display = 'none';
+                    editButton.style.display = 'inline-block';
+                } else {
+                    userInfo.style.display = 'none';
+                    editForm.style.display = 'block';
+                    editButton.style.display = 'none';
+                }
+            }
+            var modal = document.getElementById("api-docs-modal");
+            var btn = document.querySelector("button");
+            var span = document.getElementsByClassName("close")[0];
+            function openApiDocs() {
+                modal.style.display = "block";
+            }
+            function closeApiDocs() {
+                modal.style.display = "none";
+            }
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+
+            document.getElementById('verify-email').addEventListener('click', function () {
+                document.getElementById('email-verification-dialog').style.display = 'flex';
+            });
+
+            document.getElementById('cancel-verification').addEventListener('click', function () {
+                document.getElementById('email-verification-dialog').style.display = 'none';
+            });
+            document.getElementById('get-verification-code').addEventListener('click', function () {
+                var email = document.getElementById('verification-email').value;
+                if (email) {
+                    alert('Mã xác nhận đã được gửi đến ' + email);
+                } else {
+                    alert('Vui lòng nhập email.');
+                }
+            });
+
+            document.getElementById('email-verification-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var email = document.getElementById('verification-email').value;
+                var code = document.getElementById('verification-code').value;
+
+                if (email && code) {
+                    alert('Xác thực thành công.');
+                    document.getElementById('email-verification-dialog').style.display = 'none';
+                } else {
+                    alert('Vui lòng nhập đầy đủ thông tin.');
+                }
+            });
+            document.getElementById('change-password').addEventListener('click', function () {
+                document.getElementById('password-container').style.display = 'none';
+                document.getElementById('password-change-form-container').style.display = 'block';
+            });
+
+            document.getElementById('cancel-password-change').addEventListener('click', function () {
+                document.getElementById('password-change-form-container').style.display = 'none';
+                document.getElementById('password-container').style.display = 'block';
+            });
+
+            // Khi form thay đổi mật khẩu được gửi
+            document.getElementById('password-change-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Ngừng hành động mặc định của form
+
+                var currentPassword = document.getElementById('current-password').value;
+                var newPassword = document.getElementById('new-password').value;
+                var confirmNewPassword = document.getElementById('confirm-new-password').value;
+
+                // Kiểm tra mật khẩu mới và nhập lại mật khẩu có trùng khớp không
+                if (newPassword === confirmNewPassword) {
+                    alert('Mật khẩu đã được thay đổi thành công.');
+
+                    // Ẩn form thay đổi mật khẩu và hiển thị lại dòng mật khẩu
+                    document.getElementById('password-change-form-container').style.display = 'none';
+                    document.getElementById('password-container').style.display = 'block';
+
+                    // Cập nhật lại mật khẩu (ví dụ: giả lập mật khẩu mới)
+                    document.getElementById('password-text').innerText = newPassword;
+                } else {
+                    alert('Mật khẩu mới và xác nhận mật khẩu không khớp.');
+                }
+            });
+
+
+
+        </script>
 </body>
+
 </html>
