@@ -11,18 +11,18 @@
 </head>
 
 <body>
-    <button class="menu-toggle">&#9776;</button>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
     <div class="left-menu">
-        <h2>Menu</h2>
+        <h2><i class="fas fa-th-large"></i> Menu</h2>
         <ul>
             <li><i class="fas fa-user"></i><a href="index.html">Thông tin tài khoản</a></li>
             <li><i class="fas fa-wallet"></i><a href="recharge.html">Nạp tiền</a></li>
-            <li><i class="fas fa-history"></i><a href="#">Lịch sử nạp tiền</a></li>
-            <h3>THUÊ SỐ</h3>
+            <li><i class="fas fa-history"></i><a href="rechargehistory.html">Lịch sử nạp tiền</a></li>
+            <h3><i class="fas fa-phone"></i> THUÊ SỐ</h3>
             <li><i class="fas fa-bolt"></i><a href="#">Thuê số nhanh</a></li>
             <li><i class="fas fa-list"></i><a href="#">Danh sách dịch vụ</a></li>
             <li><i class="fas fa-clock"></i><a href="#">Lịch sử thuê số</a></li>
-            <h3>TÀI KHOẢN</h3>
+            <h3><i class="fas fa-user-cog"></i> TÀI KHOẢN</h3>
             <li><i class="fas fa-gift"></i><a href="#">Nhận hoa hồng</a></li>
             <li><i class="fas fa-stream"></i><a href="#">Lịch sử chung</a></li>
             <li><i class="fas fa-file-alt"></i><a href="#">Tài liệu API</a></li>
@@ -33,7 +33,7 @@
         <header class="account-header">
             <div class="balance-info">
                 <h2><strong>1,000,000 VNĐ</strong></h2>
-                <button><i class="fas fa-plus-circle"></i>Nạp tiền</button>
+                <button><i class="fas fa-plus-circle"></i> Nạp tiền</button>
             </div>
             <div class="header-icons">
                 <i class="fas fa-bell"></i>
@@ -43,7 +43,7 @@
             </div>
         </header>
         <div class="payment-methods">
-            <h2>Phương thức nạp tiền</h2>
+            <h2><i class="fas fa-credit-card"></i> Phương thức nạp tiền</h2>
             <div class="methods-container">
                 <!-- Phương thức 1: Chuyển khoản ngân hàng -->
                 <div class="method">
@@ -51,56 +51,56 @@
                     <p>Chuyển khoản trực tiếp qua tài khoản ngân hàng của chúng tôi:</p>
                     <ul>
                         <li><strong>Ngân hàng:</strong> Vietcombank</li>
-                        <li><strong>Chủ tài khoản:</strong> ABC</li>
-                        <li><strong>Số tài khoản:</strong> 1234567890</li>
-                        <li><strong>Nội dung:</strong> Nạp tiền [Tên tài khoản]</li>
+                        <li><i class="fas fa-user"></i> <strong>Chủ tài khoản:</strong> ABC</li>
+                        <li><i class="fas fa-receipt"></i> <strong>Số tài khoản:</strong> 1234567890</li>
+                        <li><i class="fas fa-comment"></i> <strong>Nội dung:</strong> Nạp tiền [Tên tài khoản]</li>
                     </ul>
-                    <p>Nạp từ 10tr đồng trở lên được tặng 10%<p>
-                        <div class="qr-code">
-                            <h4>Mã QR:</h4>
-                            <img src="https://via.placeholder.com/150" alt="Mã QR" />
-                        </div>
+                    <p><i class="fas fa-gift"></i> Nạp từ 10tr đồng trở lên được tặng 10%</p>
+                    <div class="qr-code">
+                        <h4><i class="fas fa-qrcode"></i> Mã QR:</h4>
+                        <img src="https://via.placeholder.com/150" alt="Mã QR" />
+                    </div>
                 </div>
-        
+
                 <!-- Phương thức 2: Ví điện tử -->
                 <div class="method">
                     <h3><i class="fas fa-wallet"></i> Ví điện tử</h3>
                     <p>Nạp tiền nhanh chóng qua các ví điện tử phổ biến:</p>
                     <ul>
-                        <li><strong>Momo:</strong> Số điện thoại 0000000000</li>
-                        <li><strong>ZaloPay:</strong> Số điện thoại 0000000000</li>
-                        <li><strong>ShopeePay:</strong> Số điện thoại 0000000000</li>
+                        <li><i class="fas fa-mobile-alt"></i> <strong>Momo:</strong> Số điện thoại 0000000000</li>
+                        <li><i class="fas fa-phone-alt"></i> <strong>ZaloPay:</strong> Số điện thoại 0000000000</li>
+                        <li><i class="fas fa-shopping-cart"></i> <strong>ShopeePay:</strong> Số điện thoại 0000000000</li>
                     </ul>
                 </div>
-        
             </div>
         </div>
+
         <div class="track-order">
-            <button id="track-order-btn">Theo dõi tình trạng đơn hàng</button>
+            <button id="track-order-btn"><i class="fas fa-search"></i> Theo dõi tình trạng đơn hàng</button>
         </div>
-        
+
         <div id="order-dialog" class="dialog">
             <div class="dialog-content">
                 <div class="dialog-header">
-                    <h3>Tình trạng giao dịch</h3>
-                    <button id="close-dialog">&times;</button>
+                    <h3><i class="fas fa-info-circle"></i> Tình trạng giao dịch</h3>
+                    <button id="close-dialog"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="dialog-body">
                     <div class="filters">
                         <div>
-                            <label for="transaction-id">Mã giao dịch:</label>
+                            <label for="transaction-id"><i class="fas fa-receipt"></i> Mã giao dịch:</label>
                             <input type="text" id="transaction-id" placeholder="Nhập mã giao dịch">
                         </div>
                         <div>
-                            <label for="from-date">Từ ngày:</label>
+                            <label for="from-date"><i class="fas fa-calendar-alt"></i> Từ ngày:</label>
                             <input type="date" id="from-date">
                         </div>
                         <div>
-                            <label for="to-date">Đến ngày:</label>
+                            <label for="to-date"><i class="fas fa-calendar"></i> Đến ngày:</label>
                             <input type="date" id="to-date">
                         </div>
                         <div>
-                            <label for="status">Trạng thái:</label>
+                            <label for="status"><i class="fas fa-exclamation-circle"></i> Trạng thái:</label>
                             <select id="status">
                                 <option value="">Tất cả</option>
                                 <option value="pending">Chờ xử lý</option>
@@ -108,7 +108,7 @@
                                 <option value="failed">Thất bại</option>
                             </select>
                         </div>
-                        <button id="search-btn">Tìm kiếm</button>
+                        <button id="search-btn"><i class="fas fa-search"></i> Tìm kiếm</button>
                     </div>
                     
                     <div class="entries">

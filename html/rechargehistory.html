@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin tài khoản</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/rechargehistory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <button class="menu-toggle">&#9776;</button>
+    <div class="left-menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><i class="fas fa-user"></i><a href="index.html">Thông tin tài khoản</a></li>
+            <li><i class="fas fa-wallet"></i><a href="recharge.html">Nạp tiền</a></li>
+            <li><i class="fas fa-history"></i><a href="rechargehistory.html">Lịch sử nạp tiền</a></li>
+            <h3>THUÊ SỐ</h3>
+            <li><i class="fas fa-bolt"></i><a href="#">Thuê số nhanh</a></li>
+            <li><i class="fas fa-list"></i><a href="#">Danh sách dịch vụ</a></li>
+            <li><i class="fas fa-clock"></i><a href="#">Lịch sử thuê số</a></li>
+            <h3>TÀI KHOẢN</h3>
+            <li><i class="fas fa-gift"></i><a href="#">Nhận hoa hồng</a></li>
+            <li><i class="fas fa-stream"></i><a href="#">Lịch sử chung</a></li>
+            <li><i class="fas fa-file-alt"></i><a href="#">Tài liệu API</a></li>
+            <li><i class="fas fa-user-cog"></i><a href="#">Cài đặt tài khoản</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header class="account-header">
+            <div class="balance-info">
+                <h2><strong>1,000,000 VNĐ</strong></h2>
+                <button><i class="fas fa-plus-circle"></i>Nạp tiền</button>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-bell"></i>
+                <div class="avatar">
+                    <img src="../img/avt-3.png" alt="Avatar" />
+                </div>
+            </div>
+        </header>
+        <section class="recharge-history">
+            <h1 class="section-title">Lịch sử nạp tiền</h1>
+        
+            <!-- Bộ lọc tìm kiếm -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="transaction-id">Mã giao dịch:</label>
+                    <input type="text" id="transaction-id" class="filter-input" placeholder="Nhập mã giao dịch">
+                </div>
+                <div class="filter-group">
+                    <label for="from-date">Từ ngày:</label>
+                    <input type="date" id="from-date" class="filter-input">
+                </div>
+                <div class="filter-group">
+                    <label for="to-date">Đến ngày:</label>
+                    <input type="date" id="to-date" class="filter-input">
+                </div>
+                <button id="search-btn" class="filter-btn">Tìm kiếm</button>
+            </div>
+        
+            <!-- Số lượng hiển thị -->
+            <div class="entries">
+                <label for="entries-select">Hiển thị:</label>
+                <select id="entries-select" class="entries-select">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+        
+            <!-- Bảng dữ liệu -->
+            <div class="table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Thời gian</th>
+                            <th>Số tiền</th>
+                            <th>Số dư sau biến động</th>
+                            <th>Nội dung</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recharge-table-body">
+                        <tr>
+                            <td>1</td>
+                            <td>2025-01-01 14:00</td>
+                            <td>1,000,000 VNĐ</td>
+                            <td>5,000,000 VNĐ</td>
+                            <td>Nạp tiền qua ngân hàng</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2025-01-02 10:30</td>
+                            <td>500,000 VNĐ</td>
+                            <td>5,500,000 VNĐ</td>
+                            <td>Nạp tiền qua ví điện tử</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- Phân trang -->
+            <div class="pagination">
+                <button class="pagination-btn prev-page">Trước</button>
+                <span class="current-page">1</span>
+                <button class="pagination-btn next-page">Sau</button>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.querySelector('.menu-toggle');
+            const leftMenu = document.querySelector('.left-menu');
+            const content = document.querySelector('.content');
+
+            toggleButton.addEventListener('click', () => {
+                leftMenu.classList.toggle('collapsed');
+                content.classList.toggle('collapsed');
+            });
+        });
+    </script>
+</body>
+
+</html>
