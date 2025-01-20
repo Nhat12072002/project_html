@@ -64,8 +64,131 @@
                 </div>
             </div>
         </header>
+            <h2>Thuê Số Tùy Chọn</h2>    
+             <!-- Form Group Flex Container -->
+        <div class="form-group flex-container">
+            <!-- Chọn Nhà Mạng -->
+<div class="form-item">
+    <label for="network">Nhà Mạng:</label>
+    <select id="network">
+        <option value="all">Tất cả</option>
+        <option value="viettel">Viettel</option>
+        <option value="mobifone">MobiFone</option>
+        <option value="vinaphone">VinaPhone</option>
+        <!-- Thêm các nhà mạng khác nếu cần -->
+    </select>
+</div>
 
+<!-- Chọn Đầu Số Muốn Lấy -->
+<div class="form-item">
+    <label for="desired-prefix">Đầu Số Muốn Lấy:</label>
+    <select id="desired-prefix">
+        <option value="all">Tất cả</option>
+        <option value="090">090</option>
+        <option value="093">093</option>
+        <option value="091">091</option>
+        <option value="094">094</option>
+        <!-- Thêm các đầu số khác nếu cần -->
+    </select>
+</div>
 
+<!-- Chọn Đầu Số Không Muốn Lấy -->
+<div class="form-item">
+    <label for="undesired-prefix">Đầu Số Không Muốn Lấy:</label>
+    <select id="undesired-prefix">
+        <option value="none">Không có</option>
+        <option value="090">090</option>
+        <option value="093">093</option>
+        <option value="091">091</option>
+        <option value="094">094</option>
+        <!-- Thêm các đầu số khác nếu cần -->
+    </select>
+</div>
+            <!-- Select Dịch Vụ -->
+            <div class="form-item">
+                <label for="service">Dịch Vụ:</label>
+                <select id="service">
+                    <option value="lazada">Lazada - 10.000 VND</option>
+                    <option value="tiki">Tiki - 12.000 VND</option>
+                    <option value="shopee">Shopee - 15.000 VND</option>
+                </select>
+            </div>
+
+            <!-- Thuê Số Ngay Button -->
+            <div>
+                <button id="rent-now" class="btn">Thuê Số Ngay</button>
+            </div>
+
+            <!-- Yêu Cầu Dịch Vụ Mới Button -->
+            <div >
+                <button id="request-service" class="btn">Yêu cầu dịch vụ mới</button>
+            </div>
+        </div>
+        <div id="service-dialog" class="dialog">
+            <div class="dialog-content">
+                <h3>Yêu cầu dịch vụ mới</h3>
+                <label for="service-name">Tên dịch vụ:</label>
+                <input type="text" id="service-name" placeholder="Nhập tên dịch vụ">
+
+                <label for="service-link">Link dịch vụ:</label>
+                <input type="text" id="service-link" placeholder="Nhập link dịch vụ">
+
+                <div class="dialog-actions">
+                    <button id="confirm-service" class="btn">Xác nhận</button>
+                    <button id="cancel-service" class="btn">Hủy</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Warning Block -->
+        <div class="warning-block">
+            <div class="warning-icon">⚠️</div>
+            <div class="warning-content">
+                <strong>Chú ý:</strong>
+                <ul>
+                    <li>Trường hợp cần thuê lại sim (chỉ lấy được trong thời gian ngắn 15-30p và sim khả dụng trên hệ thống), bấm vào nút  <i class="fas fa-sync-alt"></i>  gần số điện thoại đã thuê ở trang Thuê số hoặc Lịch sử thuê số.</li>
+                    <li>Số sau khi mua mà không nhận được code sẽ tự động hoàn số dư sau khi hết thời gian hết hạn (thường là 15 phút hoặc thấp hơn).</li>
+                    <li>Các dịch vụ như Gmail, Facebook, Zalo... khi đăng ký 2-3 acc sẽ bị các trang đó check IP và không gửi mã về, cần phải reset IP Internet lại (không phải IP máy tính).</li>
+                    <li>Shopee phải kiểm tra tài khoản đã đăng ký chưa trước khi lấy code, hiện tại Shopee rất khó, cân nhắc khi sử dụng.</li>
+                    <li>Telegram cần kiểm tra tài khoản đăng ký trước khi lấy code. Cách kiểm tra: Vào Contact > add contact. Nếu Add contact không thành công là số đó chưa sử dụng.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="message-table-container">
+            <h3>Danh sách các số đang chờ</h3>
+            <p class="info-text">Click vào Số điện thoại và Code để copy nhanh | <button id="reload-button" class="btn">
+                <i class="fas fa-sync-alt"></i> 
+            </button> để thuê lại số điện thoại</p>
+        
+            <table id="message-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Dịch vụ</th>
+                        <th>Giá</th>
+                        <th>Số điện thoại</th>
+                        <th>Code</th>
+                        <th>Thời gian</th>
+                        <th>Trạng thái</th>
+                        <th>Tin nhắn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="message-row">
+                        <td>1</td>
+                        <td>Lazada</td>
+                        <td>10.000 VND</td>
+                        <td class="phone-number" onclick="copyToClipboard('0912345678')">0912345678</td>
+                        <td class="code" onclick="copyToClipboard('123456')">123456</td>
+                        <td>15:30</td>
+                        <td>Chờ xác nhận</td>
+                        <td>Đang chờ xử lý</td>
+                      
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const toggleButton = document.querySelector('.menu-toggle');
@@ -81,7 +204,36 @@
                 var notifications = document.getElementById("notifications");
                 notifications.style.display = notifications.style.display === "block" ? "none" : "block";
             });
-            
+            document.getElementById("request-service").addEventListener("click", function() {
+                document.getElementById("service-dialog").style.display = "block";
+            });
+
+            document.getElementById("cancel-service").addEventListener("click", function() {
+                document.getElementById("service-dialog").style.display = "none";
+            });
+
+            document.getElementById("confirm-service").addEventListener("click", function() {
+                const serviceName = document.getElementById("service-name").value;
+                const serviceLink = document.getElementById("service-link").value;
+                if(serviceName && serviceLink) {
+                    alert(`Dịch vụ mới: ${serviceName}\nLink: ${serviceLink}`);
+                    document.getElementById("service-dialog").style.display = "none";
+                } else {
+                    alert("Vui lòng điền đầy đủ thông tin.");
+                }
+            });
+            document.getElementById("reload-button").addEventListener("click", function() {
+                alert("Đang thuê lại số...");
+            });
+            function copyToClipboard(text) {
+                const tempInput = document.createElement('input');
+                document.body.appendChild(tempInput);
+                tempInput.value = text;
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                alert('Đã sao chép: ' + text);
+            }
         </script>
     </body>
     

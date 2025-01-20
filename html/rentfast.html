@@ -96,6 +96,21 @@
             <div class="form-item">
                 <button id="request-service" class="btn">Yêu cầu dịch vụ mới</button>
             </div>
+            <div id="service-dialog" class="dialog">
+                <div class="dialog-content">
+                    <h3>Yêu cầu dịch vụ mới</h3>
+                    <label for="service-name">Tên dịch vụ:</label>
+                    <input type="text" id="service-name" placeholder="Nhập tên dịch vụ">
+    
+                    <label for="service-link">Link dịch vụ:</label>
+                    <input type="text" id="service-link" placeholder="Nhập link dịch vụ">
+    
+                    <div class="dialog-actions">
+                        <button id="confirm-service" class="btn">Xác nhận</button>
+                        <button id="cancel-service" class="btn">Hủy</button>
+                    </div>
+                </div>
+            </div>
         </div>
     
         <!-- Warning Block -->
@@ -116,7 +131,7 @@
             <button class="btn add-option" onclick="window.location.href='rentoption.html';">
                 <i class="fas fa-plus-circle"></i> Thêm số tùy chọn
             </button>
-            <h3>Danh sách tin nhắn đang chờ</h3>
+            <h3>Danh sách các số đang chờ</h3>
             <p class="info-text">Click vào Số điện thoại và Code để copy nhanh | <button id="reload-button" class="btn">
                 <i class="fas fa-sync-alt"></i> 
             </button> để thuê lại số điện thoại</p>
