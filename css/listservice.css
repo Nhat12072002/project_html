@@ -1,0 +1,206 @@
+/* Phần styling cho các thành phần */
+.service-list-block {
+    margin: 30px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Phần lọc */
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Phần item form */
+.form-item {
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Cải tiến giao diện select */
+.custom-select {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.custom-select label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.custom-select select {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus state for select */
+.custom-select select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Hover effect for select */
+.custom-select select:hover {
+    border-color: #888;
+}
+
+/* Styling for options */
+.custom-select select option {
+    padding: 10px;
+}
+
+/* Tinh tế cho các label */
+.custom-select label:hover {
+    color: #4CAF50;
+}
+
+/* Input tìm kiếm */
+.search-item input {
+    padding: 8px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    margin-right: 100px;
+}
+
+.search-item input:focus {
+    border-color: #4CAF50;
+}
+
+/* Nút thuê số */
+.btn-rent {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-rent:hover {
+    background-color: #45a049;
+}
+
+/* Bảng dịch vụ */
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.service-table th, .service-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+.service-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+    color: #333;
+}
+
+.service-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Nút thêm */
+.btn-add {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #007bb5;
+}
+
+/* Phân trang */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.pagination .page-btn {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.pagination .page-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.pagination .prev-btn, .pagination .next-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.pagination .prev-btn:hover, .pagination .next-btn:hover {
+    background-color: #45a049;
+}
+.form-item {
+    flex: 1;
+    min-width: 200px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.form-item select,
+.form-item button,
+.form-item input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-item select:focus,
+.form-item input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

@@ -64,26 +64,110 @@
                 </div>
             </div>
         </header>
+        <section class="recharge-history">
+            <h1 class="section-title">Lịch sử thuê số</h1>
+            <div class="form-item">
+                <label for="service">Dịch Vụ:</label>
+                <select id="service">
+                    <option value="lazada">Lazada - 10.000 VND</option>
+                    <option value="tiki">Tiki - 12.000 VND</option>
+                    <option value="shopee">Shopee - 15.000 VND</option>
+                </select>
+            </div>
+            <div class="form-item">
+                <label for="service">Trạng thái:</label>
+                <select id="service">
+                    <option value="all">Tất cả</option>
+                    <option value="waiting">Đợi tin nhắn</option>
+                    <option value="complete">Hoàn thành</option>
+                    <option value="expired">Hết hạn</option>
+                </select>
+            </div>
+            <!-- Bộ lọc tìm kiếm -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="transaction-id">Số điện thoại:</label>
+                    <input type="text" id="transaction-id" class="filter-input" placeholder="Nhập số điện thoại">
+                </div>
+                <div class="filter-group">
+                    <label for="from-date">Từ ngày:</label>
+                    <input type="date" id="from-date" class="filter-input">
+                </div>
+                <div class="filter-group">
+                    <label for="to-date">Đến ngày:</label>
+                    <input type="date" id="to-date" class="filter-input">
+                </div>
+                <button id="search-btn" class="filter-btn">Tìm kiếm</button>
+            </div>
+        
+            <!-- Số lượng hiển thị -->
+            <div class="entries">
+                <label for="entries-select">Hiển thị:</label>
+                <select id="entries-select" class="entries-select">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+        
+            <!-- Bảng dữ liệu -->
+            <div class="table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Thời gian</th>
+                            <th>Số tiền</th>
+                            <th>Số dư sau biến động</th>
+                            <th>Nội dung</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recharge-table-body">
+                        <tr>
+                            <td>1</td>
+                            <td>2025-01-01 14:00</td>
+                            <td>1,000,000 VNĐ</td>
+                            <td>5,000,000 VNĐ</td>
+                            <td>Nạp tiền qua ngân hàng</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2025-01-02 10:30</td>
+                            <td>500,000 VNĐ</td>
+                            <td>5,500,000 VNĐ</td>
+                            <td>Nạp tiền qua ví điện tử</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- Phân trang -->
+            <div class="pagination">
+                <button class="pagination-btn prev-page">Trước</button>
+                <span class="current-page">1</span>
+                <button class="pagination-btn next-page">Sau</button>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.querySelector('.menu-toggle');
+            const leftMenu = document.querySelector('.left-menu');
+            const content = document.querySelector('.content');
 
+            toggleButton.addEventListener('click', () => {
+                leftMenu.classList.toggle('collapsed');
+                content.classList.toggle('collapsed');
+            });
+        });
+        document.getElementById("bell-icon").addEventListener("click", function() {
+            var notifications = document.getElementById("notifications");
+            notifications.style.display = notifications.style.display === "block" ? "none" : "block";
+        });
+        
+    </script>
+</body>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const toggleButton = document.querySelector('.menu-toggle');
-                const leftMenu = document.querySelector('.left-menu');
-                const content = document.querySelector('.content');
-    
-                toggleButton.addEventListener('click', () => {
-                    leftMenu.classList.toggle('collapsed');
-                    content.classList.toggle('collapsed');
-                });
-            });
-            document.getElementById("bell-icon").addEventListener("click", function() {
-                var notifications = document.getElementById("notifications");
-                notifications.style.display = notifications.style.display === "block" ? "none" : "block";
-            });
-            
-        </script>
-    </body>
-    
-    </html>
-    
+</html>
