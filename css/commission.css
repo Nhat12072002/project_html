@@ -1,0 +1,136 @@
+.table-container {
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.custom-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Phân trang */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination-btn:hover {
+    background: #0056b3;
+}
+
+.current-page {
+    font-weight: bold;
+    color: #333;
+}
+.entries {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.entries-select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.rules-container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section-title h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.rule-section {
+    margin-bottom: 30px;
+}
+
+.rule-section h3 {
+    font-size: 20px;
+    color: #4CAF50;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.rule-section p, .rule-section ol, .rule-section ul {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.rule-section ol, .rule-section ul {
+    padding-left: 20px;
+}
+
+.rule-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.rule-section table th, .rule-section table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.rule-section table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.rule-section table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.rule-section table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.rule-section p strong {
+    color: #4CAF50;
+}
