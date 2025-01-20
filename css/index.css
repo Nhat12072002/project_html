@@ -288,7 +288,6 @@ body {
     margin-top: 30px;
 }
 
-/* Overview Section */
 .content-section {
     background-color: #fff;
     padding: 20px;
@@ -347,7 +346,7 @@ button#edit-button:focus {
 }
 
 
-/* Edit Form */
+
 .account-form {
     background: #f9f9f9;
     border-radius: 8px;
@@ -355,7 +354,7 @@ button#edit-button:focus {
     padding: 30px;
     max-width: 600px;
     margin: 20px auto;
-    display: none;  /* Initially hidden */
+    display: none; 
 }
 
 .account-form h2 {
@@ -652,7 +651,6 @@ pre {
     display: none;
 }
 
-/* Căn giữa form trong trang */
 #password-change-form-container {
     display: none;
     width: 300px; 
@@ -667,7 +665,6 @@ pre {
 }
 
 
-/* Điều chỉnh các phần tử trong form */
 .form-group {
     margin-bottom: 15px;
 }
@@ -688,7 +685,6 @@ pre {
     box-sizing: border-box;
 }
 
-/* Button chỉnh sửa */
 .form-actions {
     display: flex;
     justify-content: space-between;
