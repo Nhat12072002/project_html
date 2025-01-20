@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin tài khoản</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/mainhistory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <button class="menu-toggle">&#9776;</button>
+    <div class="left-menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><i class="fas fa-user"></i><a href="index.html">Thông tin tài khoản</a></li>
+            <li><i class="fas fa-wallet"></i><a href="recharge.html">Nạp tiền</a></li>
+            <li><i class="fas fa-history"></i><a href="rechargehistory.html">Lịch sử nạp tiền</a></li>
+            <h3>THUÊ SỐ</h3>
+            <li><i class="fas fa-bolt"></i><a href="rentfast.html">Thuê số nhanh</a></li>
+            <li><i class="fas fa-sim-card"></i><a href="rentoption.html">Thuê số tùy chọn</a></li>
+            <li><i class="fas fa-list"></i><a href="listservice.html">Danh sách dịch vụ</a></li>
+            <li><i class="fas fa-clock"></i><a href="servicehistory.html">Lịch sử thuê số</a></li>
+            <h3>TÀI KHOẢN</h3>
+            <li><i class="fas fa-gift"></i><a href="commission.html">Nhận hoa hồng</a></li>
+            <li><i class="fas fa-stream"></i><a href="mainhistory.html">Lịch sử chung</a></li>
+            <li><i class="fas fa-file-alt"></i><a href="api.html">Tài liệu API</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header class="account-header">
+            <div class="balance-info">
+                <h2><strong>1,000,000 VNĐ</strong></h2>
+                <button><i class="fas fa-plus-circle"></i>Nạp tiền</button>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-bell" id="bell-icon"></i>
+                <div class="avatar">
+                    <img src="../img/avt-3.png" alt="Avatar" />
+                </div>
+                <div class="notifications" id="notifications">
+                    <div class="notification-item">
+                        <div class="notification-avatar">
+                            <img src="../img/avt-2.png" alt="User Avatar" />
+                        </div>
+                        <div class="notification-content">
+                            <strong>Thông báo 1</strong>
+                            <p>Đã thuê sim.</p>
+                            <span class="time">2 giờ trước</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-avatar">
+                            <img src="../img/avt-3.png" alt="User Avatar" />
+                        </div>
+                        <div class="notification-content">
+                            <strong>Thông báo 2</strong>
+                            <p>Đã hủy sim.</p>
+                            <span class="time">4 giờ trước</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggleButton = document.querySelector('.menu-toggle');
+                const leftMenu = document.querySelector('.left-menu');
+                const content = document.querySelector('.content');
+    
+                toggleButton.addEventListener('click', () => {
+                    leftMenu.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                });
+            });
+            document.getElementById("bell-icon").addEventListener("click", function() {
+                var notifications = document.getElementById("notifications");
+                notifications.style.display = notifications.style.display === "block" ? "none" : "block";
+            });
+            
+        </script>
+    </body>
+    
+    </html>
+    

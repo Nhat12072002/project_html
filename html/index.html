@@ -18,13 +18,14 @@
             <li><i class="fas fa-wallet"></i><a href="recharge.html">Nạp tiền</a></li>
             <li><i class="fas fa-history"></i><a href="rechargehistory.html">Lịch sử nạp tiền</a></li>
             <h3>THUÊ SỐ</h3>
-            <li><i class="fas fa-bolt"></i><a href="#">Thuê số nhanh</a></li>
-            <li><i class="fas fa-list"></i><a href="#">Danh sách dịch vụ</a></li>
-            <li><i class="fas fa-clock"></i><a href="#">Lịch sử thuê số</a></li>
+            <li><i class="fas fa-bolt"></i><a href="rentfast.html">Thuê số nhanh</a></li>
+            <li><i class="fas fa-sim-card"></i><a href="rentoption.html">Thuê số tùy chọn</a></li>
+            <li><i class="fas fa-list"></i><a href="listservice.html">Danh sách dịch vụ</a></li>
+            <li><i class="fas fa-clock"></i><a href="servicehistory.html">Lịch sử thuê số</a></li>
             <h3>TÀI KHOẢN</h3>
-            <li><i class="fas fa-gift"></i><a href="#">Nhận hoa hồng</a></li>
-            <li><i class="fas fa-stream"></i><a href="#">Lịch sử chung</a></li>
-            <li><i class="fas fa-file-alt"></i><a href="#">Tài liệu API</a></li>
+            <li><i class="fas fa-gift"></i><a href="commission.html">Nhận hoa hồng</a></li>
+            <li><i class="fas fa-stream"></i><a href="mainhistory.html">Lịch sử chung</a></li>
+            <li><i class="fas fa-file-alt"></i><a href="api.html">Tài liệu API</a></li>
         </ul>
     </div>
 
@@ -35,9 +36,31 @@
                 <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp tiền</button>
             </div>
             <div class="header-icons">
-                <i class="fas fa-bell"></i>
+                <i class="fas fa-bell" id="bell-icon"></i>
                 <div class="avatar">
                     <img src="../img/avt-3.png" alt="Avatar" />
+                </div>
+                <div class="notifications" id="notifications">
+                    <div class="notification-item">
+                        <div class="notification-avatar">
+                            <img src="../img/avt-2.png" alt="User Avatar" />
+                        </div>
+                        <div class="notification-content">
+                            <strong>Thông báo 1</strong>
+                            <p>Đã thuê sim.</p>
+                            <span class="time">2 giờ trước</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-avatar">
+                            <img src="../img/avt-3.png" alt="User Avatar" />
+                        </div>
+                        <div class="notification-content">
+                            <strong>Thông báo 2</strong>
+                            <p>Đã hủy sim.</p>
+                            <span class="time">4 giờ trước</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -398,7 +421,10 @@ Bearer fake-token-1234567890abcdef
                 }
             });
 
-
+            document.getElementById("bell-icon").addEventListener("click", function() {
+                var notifications = document.getElementById("notifications");
+                notifications.style.display = notifications.style.display === "block" ? "none" : "block";
+            });
 
         </script>
 </body>
