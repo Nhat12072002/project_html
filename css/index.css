@@ -782,3 +782,14 @@ pre {
     color: #333;
     margin-top: 10px;
 }
+.qr-code {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.qr-code img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
