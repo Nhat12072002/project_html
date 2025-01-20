@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin tài khoản</title>
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/rechargehistory.css">
     <link rel="stylesheet" href="../css/mainhistory.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -64,26 +65,71 @@
                 </div>
             </div>
         </header>
+        <section class="recharge-history">
+            <h1 class="section-title">Lịch sử tài khoản 7 ngày gần nhất</h1>
+        
+            <!-- Bộ lọc tìm kiếm -->
+            <div class="filters">
+                <button class="btn-excel" > <i class="fas fa-file-excel"></i> Xuất file excel</button>
+            </div>
+        
+            <!-- Số lượng hiển thị -->
+            <div class="entries">
+                <label for="entries-select">Hiển thị:</label>
+                <select id="entries-select" class="entries-select">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+        
+            <!-- Bảng dữ liệu -->
+            <div class="table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Dịch vụ</th>
+                            <th>Số tiền</th>
+                            <th>Thời gian</th>
+                            <th>Mã giao dịch</th>
+                            <th>Số dư sau biến động</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody id="recharge-table-body">
+                        
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- Phân trang -->
+            <div class="pagination">
+                <button class="pagination-btn prev-page">Trước</button>
+                <span class="current-page">1</span>
+                <button class="pagination-btn next-page">Sau</button>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.querySelector('.menu-toggle');
+            const leftMenu = document.querySelector('.left-menu');
+            const content = document.querySelector('.content');
 
+            toggleButton.addEventListener('click', () => {
+                leftMenu.classList.toggle('collapsed');
+                content.classList.toggle('collapsed');
+            });
+        });
+        document.getElementById("bell-icon").addEventListener("click", function() {
+            var notifications = document.getElementById("notifications");
+            notifications.style.display = notifications.style.display === "block" ? "none" : "block";
+        });
+        
+    </script>
+</body>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const toggleButton = document.querySelector('.menu-toggle');
-                const leftMenu = document.querySelector('.left-menu');
-                const content = document.querySelector('.content');
-    
-                toggleButton.addEventListener('click', () => {
-                    leftMenu.classList.toggle('collapsed');
-                    content.classList.toggle('collapsed');
-                });
-            });
-            document.getElementById("bell-icon").addEventListener("click", function() {
-                var notifications = document.getElementById("notifications");
-                notifications.style.display = notifications.style.display === "block" ? "none" : "block";
-            });
-            
-        </script>
-    </body>
-    
-    </html>
-    
+</html>
