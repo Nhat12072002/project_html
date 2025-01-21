@@ -7,6 +7,8 @@
     <title>Thông tin tài khoản</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/rentfast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -85,8 +87,9 @@
             </div>
 
             <div class="form-item">
-                <button id="rent-now" class="btn">Thuê Số Ngay</button>
+                <button id="rent-now" class="btn" onclick="handleRent()">Thuê Số Ngay</button>
             </div>
+            <div id="notification-container" class="notification-container"></div>
 
             <div class="form-item">
                 <button id="request-service" class="btn">Yêu cầu dịch vụ mới</button>
@@ -101,13 +104,14 @@
                     <input type="text" id="service-link" placeholder="Nhập link dịch vụ">
     
                     <div class="dialog-actions">
-                        <button id="confirm-service" class="btn">Xác nhận</button>
-                        <button id="cancel-service" class="btn">Hủy</button>
+                        <button id="confirm-service" class="btn" onclick="handleServiceConfirm()">Xác nhận</button>
+                        <button id="cancel-service" class="btn" onclick="handleServiceCancel()">Hủy</button>
                     </div>
                 </div>
             </div>
         </div>
-    
+        <div id="notification-container" class="notification-container"></div>
+
         <div class="warning-block">
             <div class="warning-icon">⚠️</div>
             <div class="warning-content">
@@ -158,8 +162,50 @@
                 </tbody>
             </table>
         </div>
-        
         <script>
+            function handleRent() {
+                const country = document.getElementById('country').value;
+                const service = document.getElementById('service').value;
+            
+                if (country === "all" || service === "") {
+                    showNotification('Vui lòng chọn đầy đủ Quốc Gia và Dịch Vụ.', 'error');
+                    return;
+                }
+            
+                showNotification('Thuê số thành công! Quốc Gia: ' + country + ', Dịch Vụ: ' + service, 'success');
+            }
+            
+            function showNotification(message, type) {
+                const container = document.getElementById('notification-container');
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.innerText = message;
+            
+                container.appendChild(notification);
+            
+                setTimeout(() => {
+                    container.removeChild(notification);
+                }, 4000);
+            }
+            function handleServiceConfirm() {
+                const serviceName = document.getElementById('service-name').value.trim();
+                const serviceLink = document.getElementById('service-link').value.trim();
+            
+                if (!serviceName || !serviceLink) {
+                    showNotification('Vui lòng nhập đầy đủ thông tin.', 'error');
+                    return;
+                }
+            
+                showNotification(`Yêu cầu dịch vụ "${serviceName}" đã được gửi thành công!`, 'success');
+                document.getElementById('service-name').value = '';
+                document.getElementById('service-link').value = '';
+            }
+            
+            function handleServiceCancel() {
+                document.getElementById('service-name').value = '';
+                document.getElementById('service-link').value = '';
+                showNotification('Yêu cầu đã bị hủy.', 'info');
+            }
             document.addEventListener('DOMContentLoaded', () => {
                 const toggleButton = document.querySelector('.menu-toggle');
                 const leftMenu = document.querySelector('.left-menu');
@@ -182,18 +228,10 @@
                 document.getElementById("service-dialog").style.display = "none";
             });
 
-            document.getElementById("confirm-service").addEventListener("click", function() {
-                const serviceName = document.getElementById("service-name").value;
-                const serviceLink = document.getElementById("service-link").value;
-                if(serviceName && serviceLink) {
-                    alert(`Dịch vụ mới: ${serviceName}\nLink: ${serviceLink}`);
-                    document.getElementById("service-dialog").style.display = "none";
-                } else {
-                    alert("Vui lòng điền đầy đủ thông tin.");
-                }
-            });
+        
             document.getElementById("reload-button").addEventListener("click", function() {
-                alert("Đang thuê lại số...");
+                showNotification('Đang thuê số...', 'info');
+
             });
             function copyToClipboard(text) {
                 const tempInput = document.createElement('input');

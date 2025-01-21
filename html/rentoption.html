@@ -109,6 +109,7 @@
             <div>
                 <button id="rent-now" class="btn">Thuê Số Ngay</button>
             </div>
+            <div id="notification-container" class="notification-container"></div>
 
             <div >
                 <button id="request-service" class="btn">Yêu cầu dịch vụ mới</button>
@@ -124,8 +125,8 @@
                 <input type="text" id="service-link" placeholder="Nhập link dịch vụ">
 
                 <div class="dialog-actions">
-                    <button id="confirm-service" class="btn">Xác nhận</button>
-                    <button id="cancel-service" class="btn">Hủy</button>
+                    <button id="confirm-service" class="btn" onclick="handleServiceConfirm()">Xác nhận</button>
+                    <button id="cancel-service" class="btn" onclick="handleServiceCancel()">Hủy</button>
                 </div>
             </div>
         </div>
@@ -176,7 +177,9 @@
                     </tr>
                 </tbody>
             </table>
+
         </div>
+
         
         <script>
             document.addEventListener('DOMContentLoaded', () => {
@@ -201,18 +204,9 @@
                 document.getElementById("service-dialog").style.display = "none";
             });
 
-            document.getElementById("confirm-service").addEventListener("click", function() {
-                const serviceName = document.getElementById("service-name").value;
-                const serviceLink = document.getElementById("service-link").value;
-                if(serviceName && serviceLink) {
-                    alert(`Dịch vụ mới: ${serviceName}\nLink: ${serviceLink}`);
-                    document.getElementById("service-dialog").style.display = "none";
-                } else {
-                    alert("Vui lòng điền đầy đủ thông tin.");
-                }
-            });
+        
             document.getElementById("reload-button").addEventListener("click", function() {
-                alert("Đang thuê lại số...");
+                showNotification('Đang thuê số...', 'info');
             });
             function copyToClipboard(text) {
                 const tempInput = document.createElement('input');
@@ -221,7 +215,54 @@
                 tempInput.select();
                 document.execCommand('copy');
                 document.body.removeChild(tempInput);
-                alert('Đã sao chép: ' + text);
+            
+                showNotification('Đã sao chép: ' + text, 'info');
+            }
+
+            document.getElementById('rent-now').addEventListener('click', function () {
+                const network = document.getElementById('network').value;
+                const desiredPrefix = document.getElementById('desired-prefix').value;
+                const undesiredPrefix = document.getElementById('undesired-prefix').value;
+                const service = document.getElementById('service').value;
+            
+                if (network === 'all' || desiredPrefix === 'all' || !service) {
+                    showNotification('Vui lòng chọn đầy đủ thông tin.', 'error');
+                } else {
+                    showNotification('Thuê số thành công!', 'success');
+                }
+            });
+            
+            function showNotification(message, type) {
+                const container = document.getElementById('notification-container');
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.innerText = message;
+            
+                container.appendChild(notification);
+            
+                setTimeout(() => {
+                    container.removeChild(notification);
+                }, 4000);
+            }
+            function handleServiceConfirm() {
+                const serviceName = document.getElementById('service-name').value.trim();
+                const serviceLink = document.getElementById('service-link').value.trim();
+            
+                if (!serviceName || !serviceLink) {
+                    showNotification('Vui lòng nhập đầy đủ thông tin.', 'error');
+                    return;
+                }
+            
+                showNotification(`Yêu cầu dịch vụ "${serviceName}" đã được gửi thành công!`, 'success');
+            
+                document.getElementById('service-name').value = '';
+                document.getElementById('service-link').value = '';
+            }
+            
+            function handleServiceCancel() {
+                document.getElementById('service-name').value = '';
+                document.getElementById('service-link').value = '';
+                showNotification('Yêu cầu đã bị hủy.', 'info');
             }
         </script>
     </body>

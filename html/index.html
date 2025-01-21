@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin tài khoản</title>
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -145,9 +147,10 @@
                         <label for="phone">Số điện thoại</label>
                         <input type="tel" id="phone" name="phone" value="0123456789" required>
                     </div>
-                    <button type="submit" class="update-button">Cập nhật thông tin</button>
+                    <button type="submit" class="update-button" onclick="handleUpdate()">Cập nhật thông tin</button>
                     <button type="button" class="cancel-button" onclick="toggleEditForm()">Hủy</button>
                 </form>
+
 </div>
             <div id="security" class="content-section">
                 <h2>Bảo mật</h2>
@@ -293,7 +296,23 @@ Bearer fake-token-1234567890abcdef
 </pre>
         </div>
     </div>
+    <div id="notification-container" class="notification-container"></div>
+
         <script>
+            function showNotification(message, type = 'success') {
+                const container = document.getElementById('notification-container');
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`; 
+                notification.innerText = message;
+            
+                container.appendChild(notification);
+            
+                setTimeout(() => {
+                    container.removeChild(notification);
+                }, 4000); 
+            }
+            
+            
             document.addEventListener('DOMContentLoaded', () => {
                 const toggleButton = document.querySelector('.menu-toggle');
                 const leftMenu = document.querySelector('.left-menu');
@@ -339,6 +358,10 @@ Bearer fake-token-1234567890abcdef
                     editForm.style.display = 'block';
                     editButton.style.display = 'none';
                 }
+
+            }
+            function handleUpdate() {
+                showNotification('Cập nhật thông tin thành công.', 'success');
             }
             var modal = document.getElementById("api-docs-modal");
             var btn = document.querySelector("button");
@@ -355,7 +378,6 @@ Bearer fake-token-1234567890abcdef
                 }
             }
 
-
             document.getElementById('verify-email').addEventListener('click', function () {
                 document.getElementById('email-verification-dialog').style.display = 'flex';
             });
@@ -366,9 +388,9 @@ Bearer fake-token-1234567890abcdef
             document.getElementById('get-verification-code').addEventListener('click', function () {
                 var email = document.getElementById('verification-email').value;
                 if (email) {
-                    alert('Mã xác nhận đã được gửi đến ' + email);
+                    showNotification('Mã xác nhận đã được gửi đến ' + email, 'success');
                 } else {
-                    alert('Vui lòng nhập email.');
+                    showNotification('Vui lòng nhập email.', 'error');
                 }
             });
 
@@ -376,12 +398,12 @@ Bearer fake-token-1234567890abcdef
                 event.preventDefault();
                 var email = document.getElementById('verification-email').value;
                 var code = document.getElementById('verification-code').value;
-
+            
                 if (email && code) {
-                    alert('Xác thực thành công.');
+                    showNotification('Xác thực thành công.', 'success');
                     document.getElementById('email-verification-dialog').style.display = 'none';
                 } else {
-                    alert('Vui lòng nhập đầy đủ thông tin.');
+                    showNotification('Vui lòng nhập đầy đủ thông tin.', 'error');
                 }
             });
             document.getElementById('change-password').addEventListener('click', function () {
@@ -394,26 +416,22 @@ Bearer fake-token-1234567890abcdef
                 document.getElementById('password-container').style.display = 'block';
             });
 
-            // Khi form thay đổi mật khẩu được gửi
             document.getElementById('password-change-form').addEventListener('submit', function (event) {
-                event.preventDefault(); // Ngừng hành động mặc định của form
-
+                event.preventDefault(); 
+            
                 var currentPassword = document.getElementById('current-password').value;
                 var newPassword = document.getElementById('new-password').value;
                 var confirmNewPassword = document.getElementById('confirm-new-password').value;
-
-                // Kiểm tra mật khẩu mới và nhập lại mật khẩu có trùng khớp không
+            
                 if (newPassword === confirmNewPassword) {
-                    alert('Mật khẩu đã được thay đổi thành công.');
-
-                    // Ẩn form thay đổi mật khẩu và hiển thị lại dòng mật khẩu
+                    showNotification('Mật khẩu đã được thay đổi thành công.','success');
+            
                     document.getElementById('password-change-form-container').style.display = 'none';
                     document.getElementById('password-container').style.display = 'block';
-
-                    // Cập nhật lại mật khẩu (ví dụ: giả lập mật khẩu mới)
+            
                     document.getElementById('password-text').innerText = newPassword;
                 } else {
-                    alert('Mật khẩu mới và xác nhận mật khẩu không khớp.');
+                    showNotification('Mật khẩu mới và xác nhận mật khẩu không khớp.','error');
                 }
             });
 
