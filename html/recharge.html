@@ -34,7 +34,9 @@
         <header class="account-header">
             <div class="balance-info">
                 <h2><strong>1,000,000 VNĐ</strong></h2>
-                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp tiền</button>            </div>
+                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp
+                    tiền</button>
+            </div>
             <div class="header-icons">
                 <i class="fas fa-bell" id="bell-icon"></i>
                 <div class="avatar">
@@ -89,7 +91,8 @@
                     <ul>
                         <li><i class="fas fa-mobile-alt"></i> <strong>Momo:</strong> Số điện thoại 0000000000</li>
                         <li><i class="fas fa-phone-alt"></i> <strong>ZaloPay:</strong> Số điện thoại 0000000000</li>
-                        <li><i class="fas fa-shopping-cart"></i> <strong>ShopeePay:</strong> Số điện thoại 0000000000</li>
+                        <li><i class="fas fa-shopping-cart"></i> <strong>ShopeePay:</strong> Số điện thoại 0000000000
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -130,7 +133,7 @@
                         </div>
                         <button id="search-btn"><i class="fas fa-search"></i> Tìm kiếm</button>
                     </div>
-                    
+
                     <div class="entries">
                         <label for="entries-select">Hiển thị:</label>
                         <select id="entries-select">
@@ -140,7 +143,7 @@
                             <option value="100">100</option>
                         </select>
                     </div>
-                    
+
                     <table>
                         <thead>
                             <tr>
@@ -157,7 +160,7 @@
                         <tbody id="order-table-body">
                         </tbody>
                     </table>
-        
+
                     <div class="pagination">
                         <button class="prev-page">Trước</button>
                         <span class="current-page">1</span>
@@ -180,25 +183,25 @@
             document.getElementById('track-order-btn').addEventListener('click', () => {
                 document.getElementById('order-dialog').style.display = 'flex';
             });
-            
+
             document.getElementById('close-dialog').addEventListener('click', () => {
                 document.getElementById('order-dialog').style.display = 'none';
             });
-            
+
             document.getElementById('search-btn').addEventListener('click', () => {
                 const transactionId = document.getElementById('transaction-id').value;
                 const fromDate = document.getElementById('from-date').value;
                 const toDate = document.getElementById('to-date').value;
                 const status = document.getElementById('status').value;
                 const entries = document.getElementById('entries-select').value;
-            
+
                 console.log({ transactionId, fromDate, toDate, status, entries });
             });
-            document.getElementById("bell-icon").addEventListener("click", function() {
+            document.getElementById("bell-icon").addEventListener("click", function () {
                 var notifications = document.getElementById("notifications");
                 notifications.style.display = notifications.style.display === "block" ? "none" : "block";
             });
         </script>
-    </body>
+</body>
 
-    </html>
+</html>

@@ -35,7 +35,8 @@
         <header class="account-header">
             <div class="balance-info">
                 <h2><strong>1,000,000 VNĐ</strong></h2>
-                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp tiền</button>
+                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp
+                    tiền</button>
             </div>
             <div class="header-icons">
                 <i class="fas fa-bell" id="bell-icon"></i>
@@ -151,7 +152,7 @@
                     <button type="button" class="cancel-button" onclick="toggleEditForm()">Hủy</button>
                 </form>
 
-</div>
+            </div>
             <div id="security" class="content-section">
                 <h2>Bảo mật</h2>
                 <div class="form-group">
@@ -210,109 +211,108 @@
                         </div>
                     </form>
                 </div>
-                
-        </div>
-        <div id="password-change-form-container" style="display: none;">
-            <form id="password-change-form">
-                <div class="form-group">
-                    <label for="current-password">Mật khẩu hiện tại</label>
-                    <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại"
-                        required />
-                </div>
-                <div class="form-group">
-                    <label for="new-password">Mật khẩu mới</label>
-                    <input type="password" id="new-password" placeholder="Nhập mật khẩu mới" required />
-                </div>
-                <div class="form-group">
-                    <label for="confirm-new-password">Nhập lại mật khẩu mới</label>
-                    <input type="password" id="confirm-new-password" placeholder="Nhập lại mật khẩu mới"
-                        required />
-                </div>
-                <div class="form-actions">
-                    <button type="submit">Đổi mật khẩu</button>
-                    <button type="button" id="cancel-password-change">Hủy</button>
-                </div>
-            </form>
-        </div>
-        <div id="commission" class="content-section">
-            <h2>Hoa hồng</h2>
-            <div id="commission">
-                <div class="commission-info">
-                    <div class="left">
-                        <h3>Giới thiệu bạn bè nhận thưởng</h3>
-                        <p>Thông tin và thể lệ</p>
-                        <p>Giới thiệu bạn bè thành công, bạn có thể được hưởng tối đa 4% số tiền mà bạn bè đã nạp.</p>
-                    </div>
-                    <div class="right">
-                        <h4>Link giới thiệu</h4>
-                        <a href="#" id="referral-link">https://example.com/referral</a>
-                    </div>
-                </div>
-            
-                <div class="commission-statistics">
-                    <div class="stat-box">
-                        <h5>Tổng Hoa Hồng Đã Nhận</h5>
-                        <p>0 VNĐ</p>
-                    </div>
-                    <div class="stat-box">
-                        <h5>Hoa Hồng Tuần Này</h5>
-                        <p>0 VNĐ</p>
-                    </div>
-                    <div class="stat-box">
-                        <h5>Số Người Đã Giới Thiệu</h5>
-                        <p>0</p>
-                    </div>
-                    <div class="stat-box">
-                        <h5>Được Giới Thiệu Bởi</h5>
-                        <p>Người khác</p>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <div id="api" class="content-section">
-            <h2>API</h2>
-            <button onclick="openApiDocs()" id="btn-api">Tài liệu API</button>
 
-            <div id="api-docs-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeApiDocs()">&times;</span>
-                    <h3>Tài liệu API</h3>
-                    <p>API này hỗ trợ các tính năng sau:</p>
-                    <ul>
-                        <li><strong>GET /api/users:</strong> Lấy danh sách người dùng.</li>
-                        <li><strong>POST /api/login:</strong> Đăng nhập với email và mật khẩu.</li>
-                        <li><strong>POST /api/register:</strong> Đăng ký người dùng mới.</li>
-                    </ul>
-                    <p>Vui lòng sử dụng Bearer token để xác thực yêu cầu.</p>
-                </div>
             </div>
+            <div id="password-change-form-container" style="display: none;">
+                <form id="password-change-form">
+                    <div class="form-group">
+                        <label for="current-password">Mật khẩu hiện tại</label>
+                        <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Mật khẩu mới</label>
+                        <input type="password" id="new-password" placeholder="Nhập mật khẩu mới" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-new-password">Nhập lại mật khẩu mới</label>
+                        <input type="password" id="confirm-new-password" placeholder="Nhập lại mật khẩu mới" required />
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Đổi mật khẩu</button>
+                        <button type="button" id="cancel-password-change">Hủy</button>
+                    </div>
+                </form>
+            </div>
+            <div id="commission" class="content-section">
+                <h2>Hoa hồng</h2>
+                <div id="commission">
+                    <div class="commission-info">
+                        <div class="left">
+                            <h3>Giới thiệu bạn bè nhận thưởng</h3>
+                            <p>Thông tin và thể lệ</p>
+                            <p>Giới thiệu bạn bè thành công, bạn có thể được hưởng tối đa 4% số tiền mà bạn bè đã nạp.
+                            </p>
+                        </div>
+                        <div class="right">
+                            <h4>Link giới thiệu</h4>
+                            <a href="#" id="referral-link">https://example.com/referral</a>
+                        </div>
+                    </div>
 
-            <h3>Token API </h3>
-            <pre>
+                    <div class="commission-statistics">
+                        <div class="stat-box">
+                            <h5>Tổng Hoa Hồng Đã Nhận</h5>
+                            <p>0 VNĐ</p>
+                        </div>
+                        <div class="stat-box">
+                            <h5>Hoa Hồng Tuần Này</h5>
+                            <p>0 VNĐ</p>
+                        </div>
+                        <div class="stat-box">
+                            <h5>Số Người Đã Giới Thiệu</h5>
+                            <p>0</p>
+                        </div>
+                        <div class="stat-box">
+                            <h5>Được Giới Thiệu Bởi</h5>
+                            <p>Người khác</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="api" class="content-section">
+                <h2>API</h2>
+                <button onclick="openApiDocs()" id="btn-api">Tài liệu API</button>
+
+                <div id="api-docs-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeApiDocs()">&times;</span>
+                        <h3>Tài liệu API</h3>
+                        <p>API này hỗ trợ các tính năng sau:</p>
+                        <ul>
+                            <li><strong>GET /api/users:</strong> Lấy danh sách người dùng.</li>
+                            <li><strong>POST /api/login:</strong> Đăng nhập với email và mật khẩu.</li>
+                            <li><strong>POST /api/register:</strong> Đăng ký người dùng mới.</li>
+                        </ul>
+                        <p>Vui lòng sử dụng Bearer token để xác thực yêu cầu.</p>
+                    </div>
+                </div>
+
+                <h3>Token API </h3>
+                <pre>
 <code>
 Bearer fake-token-1234567890abcdef
 </code>
 </pre>
+            </div>
         </div>
-    </div>
-    <div id="notification-container" class="notification-container"></div>
+        <div id="notification-container" class="notification-container"></div>
 
         <script>
             function showNotification(message, type = 'success') {
                 const container = document.getElementById('notification-container');
                 const notification = document.createElement('div');
-                notification.className = `notification ${type}`; 
+                notification.className = `notification ${type}`;
                 notification.innerText = message;
-            
+
                 container.appendChild(notification);
-            
+
                 setTimeout(() => {
                     container.removeChild(notification);
-                }, 4000); 
+                }, 4000);
             }
-            
-            
+
+
             document.addEventListener('DOMContentLoaded', () => {
                 const toggleButton = document.querySelector('.menu-toggle');
                 const leftMenu = document.querySelector('.left-menu');
@@ -398,7 +398,7 @@ Bearer fake-token-1234567890abcdef
                 event.preventDefault();
                 var email = document.getElementById('verification-email').value;
                 var code = document.getElementById('verification-code').value;
-            
+
                 if (email && code) {
                     showNotification('Xác thực thành công.', 'success');
                     document.getElementById('email-verification-dialog').style.display = 'none';
@@ -417,25 +417,25 @@ Bearer fake-token-1234567890abcdef
             });
 
             document.getElementById('password-change-form').addEventListener('submit', function (event) {
-                event.preventDefault(); 
-            
+                event.preventDefault();
+
                 var currentPassword = document.getElementById('current-password').value;
                 var newPassword = document.getElementById('new-password').value;
                 var confirmNewPassword = document.getElementById('confirm-new-password').value;
-            
+
                 if (newPassword === confirmNewPassword) {
-                    showNotification('Mật khẩu đã được thay đổi thành công.','success');
-            
+                    showNotification('Mật khẩu đã được thay đổi thành công.', 'success');
+
                     document.getElementById('password-change-form-container').style.display = 'none';
                     document.getElementById('password-container').style.display = 'block';
-            
+
                     document.getElementById('password-text').innerText = newPassword;
                 } else {
-                    showNotification('Mật khẩu mới và xác nhận mật khẩu không khớp.','error');
+                    showNotification('Mật khẩu mới và xác nhận mật khẩu không khớp.', 'error');
                 }
             });
 
-            document.getElementById("bell-icon").addEventListener("click", function() {
+            document.getElementById("bell-icon").addEventListener("click", function () {
                 var notifications = document.getElementById("notifications");
                 notifications.style.display = notifications.style.display === "block" ? "none" : "block";
             });

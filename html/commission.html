@@ -34,7 +34,9 @@
         <header class="account-header">
             <div class="balance-info">
                 <h2><strong>1,000,000 VNĐ</strong></h2>
-                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp tiền</button>            </div>
+                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp
+                    tiền</button>
+            </div>
             <div class="header-icons">
                 <i class="fas fa-bell" id="bell-icon"></i>
                 <div class="avatar">
@@ -76,87 +78,41 @@
                 </ul>
             </div>
             <div class="menu-content">
-            <div id="overview" class="content-section">
-                <h2>Hoa hồng</h2>
-                <div id="commission">
-                    <div class="commission-info">
-                        <div class="left">
-                            <h3>Giới thiệu bạn bè nhận thưởng</h3>
-                            <p>Thông tin và thể lệ</p>
-                            <p>Giới thiệu bạn bè thành công, bạn có thể được hưởng tối đa 4% số tiền mà bạn bè đã nạp.</p>
+                <div id="overview" class="content-section">
+                    <h2>Hoa hồng</h2>
+                    <div id="commission">
+                        <div class="commission-info">
+                            <div class="left">
+                                <h3>Giới thiệu bạn bè nhận thưởng</h3>
+                                <p>Thông tin và thể lệ</p>
+                                <p>Giới thiệu bạn bè thành công, bạn có thể được hưởng tối đa 4% số tiền mà bạn bè đã
+                                    nạp.</p>
+                            </div>
+                            <div class="right">
+                                <h4>Link giới thiệu</h4>
+                                <a href="#" id="referral-link">https://example.com/referral</a>
+                            </div>
                         </div>
-                        <div class="right">
-                            <h4>Link giới thiệu</h4>
-                            <a href="#" id="referral-link">https://example.com/referral</a>
-                        </div>
-                    </div>
-                
-                    <div class="commission-statistics">
-                        <div class="stat-box">
-                            <h5>Tổng Hoa Hồng Đã Nhận</h5>
-                            <p>0 VNĐ</p>
-                        </div>
-                        <div class="stat-box">
-                            <h5>Hoa Hồng Tuần Này</h5>
-                            <p>0 VNĐ</p>
-                        </div>
-                        <div class="stat-box">
-                            <h5>Số Người Đã Giới Thiệu</h5>
-                            <p>0</p>
-                        </div>
-                        <div class="stat-box">
-                            <h5>Được Giới Thiệu Bởi</h5>
-                            <p>Người khác</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="entries">
-                    <label for="entries-select">Hiển thị:</label>
-                    <select id="entries-select" class="entries-select">
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select>
-                </div>
-                <div class="table-container">
-                    <h2>Danh sách giới thiệu</h2>
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Tài khoản</th>
-                                <th>Số tiền đã nạp</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recharge-table-body">
-                            <tr>
-                                <td>1</td>
-                                <td>ABC</td>
-                                <td>1,000,000 VNĐ</td>
-                    
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Admin</td>
-                                <td>500,000 VNĐ</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            
-                <div class="pagination">
-                    <button class="pagination-btn prev-page">Trước</button>
-                    <span class="current-page">1</span>
-                    <button class="pagination-btn next-page">Sau</button>
-                </div>
-            </div>
 
-         
-            <div id="history" class="content-section">
-                
-                <div class="table-container">
-                    <h2>Lịch sử nhận thưởng</h2>
+                        <div class="commission-statistics">
+                            <div class="stat-box">
+                                <h5>Tổng Hoa Hồng Đã Nhận</h5>
+                                <p>0 VNĐ</p>
+                            </div>
+                            <div class="stat-box">
+                                <h5>Hoa Hồng Tuần Này</h5>
+                                <p>0 VNĐ</p>
+                            </div>
+                            <div class="stat-box">
+                                <h5>Số Người Đã Giới Thiệu</h5>
+                                <p>0</p>
+                            </div>
+                            <div class="stat-box">
+                                <h5>Được Giới Thiệu Bởi</h5>
+                                <p>Người khác</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="entries">
                         <label for="entries-select">Hiển thị:</label>
                         <select id="entries-select" class="entries-select">
@@ -166,128 +122,180 @@
                             <option value="100">100</option>
                         </select>
                     </div>
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Khoảng thời gian</th>
-                                <th>Số tiền thưởng</th>
-                                <th>Thời gian trả thưởng</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recharge-table-body">
-                            <tr>
-                                <td>1</td>
-                                <td>01/01/2025 - 31/01/2025</td>
-                                <td>2,000,000 VND</td>
-                                <td>05/02/2025</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>01/02/2025 - 28/02/2025</td>
-                                <td>2,500,000 VND</td>
-                                <td>05/03/2025</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>01/03/2025 - 31/03/2025</td>
-                                <td>3,000,000 VND</td>
-                                <td>05/04/2025</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>01/04/2025 - 30/04/2025</td>
-                                <td>2,800,000 VND</td>
-                                <td>05/05/2025</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>01/05/2025 - 31/05/2025</td>
-                                <td>3,200,000 VND</td>
-                                <td>05/06/2025</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            
-                <div class="pagination">
-                    <button class="pagination-btn prev-page">Trước</button>
-                    <span class="current-page">1</span>
-                    <button class="pagination-btn next-page">Sau</button>
-                </div>
-            </div>
+                    <div class="table-container">
+                        <h2>Danh sách giới thiệu</h2>
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tài khoản</th>
+                                    <th>Số tiền đã nạp</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recharge-table-body">
+                                <tr>
+                                    <td>1</td>
+                                    <td>ABC</td>
+                                    <td>1,000,000 VNĐ</td>
 
-            <div id="rules" class="content-section">
-            <div class="rules-container">
-                <div class="section-title">
-                    <h2>Thể Lệ Chương Trình Giới Thiệu Bạn Bè</h2>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Admin</td>
+                                    <td>500,000 VNĐ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn prev-page">Trước</button>
+                        <span class="current-page">1</span>
+                        <button class="pagination-btn next-page">Sau</button>
+                    </div>
                 </div>
-            
-                <div class="rule-section">
-                    <h3>NỘI DUNG</h3>
-                    <p>Khi giới thiệu bạn bè thành công, bạn có thể được hưởng tối đa <strong>4%</strong> số tiền mà bạn bè đã nạp.</p>
-                    <p>Giải thưởng được trao vào ngày <strong>thứ 2 hàng tuần</strong>, cộng vào số dư tài khoản chính.</p>
+
+
+                <div id="history" class="content-section">
+
+                    <div class="table-container">
+                        <h2>Lịch sử nhận thưởng</h2>
+                        <div class="entries">
+                            <label for="entries-select">Hiển thị:</label>
+                            <select id="entries-select" class="entries-select">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Khoảng thời gian</th>
+                                    <th>Số tiền thưởng</th>
+                                    <th>Thời gian trả thưởng</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recharge-table-body">
+                                <tr>
+                                    <td>1</td>
+                                    <td>01/01/2025 - 31/01/2025</td>
+                                    <td>2,000,000 VND</td>
+                                    <td>05/02/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>01/02/2025 - 28/02/2025</td>
+                                    <td>2,500,000 VND</td>
+                                    <td>05/03/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>01/03/2025 - 31/03/2025</td>
+                                    <td>3,000,000 VND</td>
+                                    <td>05/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>01/04/2025 - 30/04/2025</td>
+                                    <td>2,800,000 VND</td>
+                                    <td>05/05/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>01/05/2025 - 31/05/2025</td>
+                                    <td>3,200,000 VND</td>
+                                    <td>05/06/2025</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn prev-page">Trước</button>
+                        <span class="current-page">1</span>
+                        <button class="pagination-btn next-page">Sau</button>
+                    </div>
                 </div>
-            
-                <div class="rule-section">
-                    <h3>CÁCH THỨC GIỚI THIỆU BẠN BÈ</h3>
-                    <ol>
-                        <li>Gửi <strong>link giới thiệu</> có chứa mã giới thiệu cho bạn bè để bạn bè đăng ký qua link.</li>
-                        <li>Gửi <strong>mã giới thiệu</strong> cho bạn bè, sau khi đăng ký bạn của bạn nhập mã giới thiệu ở bước cuối cùng là hoàn thành.</li>
-                    </ol>
-                </div>
-            
-                <div class="rule-section">
-                    <h3>QUY ĐỊNH CHUNG</h3>
-                    <ul>
-                        <li>Bắt đầu tính số liệu từ <strong>0h00 ngày thứ 2</strong> và chốt số liệu trả thưởng vào <strong>23h59 ngày chủ nhật</strong>.</li>
-                        <li>Giải thưởng được trao trước <strong>8h sáng ngày thứ 2 hàng tuần</strong>.</li>
-                        <li>Luồng nạp bao gồm: Nạp ngân hàng, nạp Momo, nạp thẻ ĐT.</li>
-                        <li>Các trường hợp gian lận sẽ bị <strong>khóa tài khoản</strong>.</li>
-                    </ul>
-                </div>
-            
-                <div class="rule-section">
-                    <h3>TỈ LỆ THƯỞNG</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tổng số tiền nạp của bạn bè trong 7 ngày</th>
-                                <th>Số % được thưởng</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Từ 100.000 VNĐ - 10.000.000 VNĐ</td>
-                                <td>2 %</td>
-                            </tr>
-                            <tr>
-                                <td>Từ 10.000.001 VNĐ trở lên</td>
-                                <td>4 %</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>Liên hệ Admin để có % cao hơn.</p>
+
+                <div id="rules" class="content-section">
+                    <div class="rules-container">
+                        <div class="section-title">
+                            <h2>Thể Lệ Chương Trình Giới Thiệu Bạn Bè</h2>
+                        </div>
+
+                        <div class="rule-section">
+                            <h3>NỘI DUNG</h3>
+                            <p>Khi giới thiệu bạn bè thành công, bạn có thể được hưởng tối đa <strong>4%</strong> số
+                                tiền mà bạn bè đã nạp.</p>
+                            <p>Giải thưởng được trao vào ngày <strong>thứ 2 hàng tuần</strong>, cộng vào số dư tài khoản
+                                chính.</p>
+                        </div>
+
+                        <div class="rule-section">
+                            <h3>CÁCH THỨC GIỚI THIỆU BẠN BÈ</h3>
+                            <ol>
+                                <li>Gửi <strong>link giới thiệu</> có chứa mã giới thiệu cho bạn bè để bạn bè đăng ký
+                                        qua link.</li>
+                                <li>Gửi <strong>mã giới thiệu</strong> cho bạn bè, sau khi đăng ký bạn của bạn nhập mã
+                                    giới thiệu ở bước cuối cùng là hoàn thành.</li>
+                            </ol>
+                        </div>
+
+                        <div class="rule-section">
+                            <h3>QUY ĐỊNH CHUNG</h3>
+                            <ul>
+                                <li>Bắt đầu tính số liệu từ <strong>0h00 ngày thứ 2</strong> và chốt số liệu trả thưởng
+                                    vào <strong>23h59 ngày chủ nhật</strong>.</li>
+                                <li>Giải thưởng được trao trước <strong>8h sáng ngày thứ 2 hàng tuần</strong>.</li>
+                                <li>Luồng nạp bao gồm: Nạp ngân hàng, nạp Momo, nạp thẻ ĐT.</li>
+                                <li>Các trường hợp gian lận sẽ bị <strong>khóa tài khoản</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-section">
+                            <h3>TỈ LỆ THƯỞNG</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tổng số tiền nạp của bạn bè trong 7 ngày</th>
+                                        <th>Số % được thưởng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Từ 100.000 VNĐ - 10.000.000 VNĐ</td>
+                                        <td>2 %</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Từ 10.000.001 VNĐ trở lên</td>
+                                        <td>4 %</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Liên hệ Admin để có % cao hơn.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-            </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const toggleButton = document.querySelector('.menu-toggle');
-                const leftMenu = document.querySelector('.left-menu');
-                const content = document.querySelector('.content');
-    
-                toggleButton.addEventListener('click', () => {
-                    leftMenu.classList.toggle('collapsed');
-                    content.classList.toggle('collapsed');
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const toggleButton = document.querySelector('.menu-toggle');
+                    const leftMenu = document.querySelector('.left-menu');
+                    const content = document.querySelector('.content');
+
+                    toggleButton.addEventListener('click', () => {
+                        leftMenu.classList.toggle('collapsed');
+                        content.classList.toggle('collapsed');
+                    });
                 });
-            });
-            document.getElementById("bell-icon").addEventListener("click", function() {
-                var notifications = document.getElementById("notifications");
-                notifications.style.display = notifications.style.display === "block" ? "none" : "block";
-            });
-            const menuLinks = document.querySelectorAll('.horizontal-menu a');
+                document.getElementById("bell-icon").addEventListener("click", function () {
+                    var notifications = document.getElementById("notifications");
+                    notifications.style.display = notifications.style.display === "block" ? "none" : "block";
+                });
+                const menuLinks = document.querySelectorAll('.horizontal-menu a');
                 const contentSections = document.querySelectorAll('.content-section');
 
                 menuLinks.forEach(link => {
@@ -306,9 +314,8 @@
                 });
 
                 document.querySelector('.horizontal-menu a').click();
-                
-        </script>
-    </body>
-    
-    </html>
-    
+
+            </script>
+</body>
+
+</html>

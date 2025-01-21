@@ -34,7 +34,9 @@
         <header class="account-header">
             <div class="balance-info">
                 <h2><strong>1,000,000 VNĐ</strong></h2>
-                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp tiền</button>            </div>
+                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp
+                    tiền</button>
+            </div>
             <div class="header-icons">
                 <i class="fas fa-bell" id="bell-icon"></i>
                 <div class="avatar">
@@ -64,73 +66,73 @@
                 </div>
             </div>
         </header>
-<div class="service-list-block">
-    <div class="filter-section">
-        <div class="form-item">
-            <label for="country">Quốc Gia:</label>
-            <select id="country">
-                <option value="vietnam">Sim Việt Nam</option>
-                <option value="laos">Sim Lào</option>
-            </select>
+        <div class="service-list-block">
+            <div class="filter-section">
+                <div class="form-item">
+                    <label for="country">Quốc Gia:</label>
+                    <select id="country">
+                        <option value="vietnam">Sim Việt Nam</option>
+                        <option value="laos">Sim Lào</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="entries">Hiển thị:</label>
+                    <select id="entries">
+                        <option value="10">10 </option>
+                        <option value="20">20 </option>
+                        <option value="50">50 </option>
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="form-item search-item">
+                <input type="text" id="search" placeholder="Tìm kiếm dịch vụ..." />
+            </div>
+
+            <div class="form-item">
+                <button class="btn-rent" onclick="window.location.href='rentoption.html';">Thuê Số</button>
+            </div>
+            <table class="service-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Mã dịch vụ</th>
+                        <th>Tên dịch vụ</th>
+                        <th>Giá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>12345</td>
+                        <td>Lazada</td>
+                        <td>1,400 VND</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>67890</td>
+                        <td>Shopee</td>
+                        <td>1,500 VND</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>11223</td>
+                        <td>Tiki</td>
+                        <td>1,200 VND</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <button class="prev-btn">« Previous</button>
+                <button class="page-btn">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="next-btn">Next »</button>
+            </div>
         </div>
-
-        <div class="form-item">
-            <label for="entries">Hiển thị:</label>
-            <select id="entries">
-                <option value="10">10 </option>
-                <option value="20">20 </option>
-                <option value="50">50 </option>
-            </select>
-        </div>
-
-        
-    </div>
-    <div class="form-item search-item">
-        <input type="text" id="search" placeholder="Tìm kiếm dịch vụ..." />
-    </div>
-
-    <div class="form-item">
-        <button class="btn-rent" onclick="window.location.href='rentoption.html';">Thuê Số</button>
-    </div>
-    <table class="service-table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Mã dịch vụ</th>
-                <th>Tên dịch vụ</th>
-                <th>Giá</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>12345</td>
-                <td>Lazada</td>
-                <td>1,400 VND</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>67890</td>
-                <td>Shopee</td>
-                <td>1,500 VND</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>11223</td>
-                <td>Tiki</td>
-                <td>1,200 VND</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="pagination">
-        <button class="prev-btn">« Previous</button>
-        <button class="page-btn">1</button>
-        <button class="page-btn">2</button>
-        <button class="page-btn">3</button>
-        <button class="next-btn">Next »</button>
-    </div>
-</div>
 
 
         <script>
@@ -138,19 +140,18 @@
                 const toggleButton = document.querySelector('.menu-toggle');
                 const leftMenu = document.querySelector('.left-menu');
                 const content = document.querySelector('.content');
-    
+
                 toggleButton.addEventListener('click', () => {
                     leftMenu.classList.toggle('collapsed');
                     content.classList.toggle('collapsed');
                 });
             });
-            document.getElementById("bell-icon").addEventListener("click", function() {
+            document.getElementById("bell-icon").addEventListener("click", function () {
                 var notifications = document.getElementById("notifications");
                 notifications.style.display = notifications.style.display === "block" ? "none" : "block";
             });
-            
+
         </script>
-    </body>
-    
-    </html>
-    
+</body>
+
+</html>

@@ -7,7 +7,8 @@
     border-collapse: collapse;
 }
 
-.custom-table th, .custom-table td {
+.custom-table th,
+.custom-table td {
     padding: 12px 15px;
     border: 1px solid #ddd;
     text-align: left;
@@ -53,6 +54,7 @@
     font-weight: bold;
     color: #333;
 }
+
 .entries {
     margin-bottom: 20px;
     display: flex;
@@ -66,6 +68,7 @@
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
 .rules-container {
     width: 80%;
     margin: 0 auto;
@@ -94,13 +97,16 @@
     margin-bottom: 15px;
 }
 
-.rule-section p, .rule-section ol, .rule-section ul {
+.rule-section p,
+.rule-section ol,
+.rule-section ul {
     font-size: 16px;
     line-height: 1.5;
     color: #333;
 }
 
-.rule-section ol, .rule-section ul {
+.rule-section ol,
+.rule-section ul {
     padding-left: 20px;
 }
 
@@ -110,7 +116,8 @@
     margin-top: 15px;
 }
 
-.rule-section table th, .rule-section table td {
+.rule-section table th,
+.rule-section table td {
     padding: 12px;
     text-align: center;
     border: 1px solid #ddd;

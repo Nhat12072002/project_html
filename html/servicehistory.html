@@ -34,7 +34,9 @@
         <header class="account-header">
             <div class="balance-info">
                 <h2><strong>1,000,000 VNĐ</strong></h2>
-                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp tiền</button>            </div>
+                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp
+                    tiền</button>
+            </div>
             <div class="header-icons">
                 <i class="fas fa-bell" id="bell-icon"></i>
                 <div class="avatar">
@@ -100,7 +102,7 @@
 
                 <button id="search-btn" class="filter-btn">Tìm kiếm</button>
             </div>
-        
+
             <div class="entries">
                 <label for="entries-select">Hiển thị:</label>
                 <select id="entries-select" class="entries-select">
@@ -110,7 +112,7 @@
                     <option value="100">100</option>
                 </select>
             </div>
-        
+
             <div class="table-container">
                 <table class="custom-table">
                     <thead>
@@ -140,7 +142,7 @@
                     </tbody>
                 </table>
             </div>
-        
+
             <div class="pagination">
                 <button class="pagination-btn prev-page">Trước</button>
                 <span class="current-page">1</span>
@@ -148,7 +150,7 @@
             </div>
         </section>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.querySelector('.menu-toggle');
@@ -160,11 +162,11 @@
                 content.classList.toggle('collapsed');
             });
         });
-        document.getElementById("bell-icon").addEventListener("click", function() {
+        document.getElementById("bell-icon").addEventListener("click", function () {
             var notifications = document.getElementById("notifications");
             notifications.style.display = notifications.style.display === "block" ? "none" : "block";
         });
-        
+
     </script>
 </body>
 

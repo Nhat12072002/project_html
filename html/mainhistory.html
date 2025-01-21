@@ -35,7 +35,9 @@
         <header class="account-header">
             <div class="balance-info">
                 <h2><strong>1,000,000 VNĐ</strong></h2>
-                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp tiền</button>            </div>
+                <button onclick="window.location.href='recharge.html';"><i class="fas fa-plus-circle"></i>Nạp
+                    tiền</button>
+            </div>
             <div class="header-icons">
                 <i class="fas fa-bell" id="bell-icon"></i>
                 <div class="avatar">
@@ -67,11 +69,11 @@
         </header>
         <section class="recharge-history">
             <h1 class="section-title">Lịch sử tài khoản 7 ngày gần nhất</h1>
-        
+
             <div class="filters">
-                <button class="btn-excel" > <i class="fas fa-file-excel"></i> Xuất file excel</button>
+                <button class="btn-excel"> <i class="fas fa-file-excel"></i> Xuất file excel</button>
             </div>
-        
+
             <div class="entries">
                 <label for="entries-select">Hiển thị:</label>
                 <select id="entries-select" class="entries-select">
@@ -81,7 +83,7 @@
                     <option value="100">100</option>
                 </select>
             </div>
-        
+
             <div class="table-container">
                 <table class="custom-table">
                     <thead>
@@ -92,15 +94,15 @@
                             <th>Thời gian</th>
                             <th>Mã giao dịch</th>
                             <th>Số dư sau biến động</th>
-                        
+
                         </tr>
                     </thead>
                     <tbody id="recharge-table-body">
-                        
+
                     </tbody>
                 </table>
             </div>
-        
+
             <div class="pagination">
                 <button class="pagination-btn prev-page">Trước</button>
                 <span class="current-page">1</span>
@@ -108,7 +110,7 @@
             </div>
         </section>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.querySelector('.menu-toggle');
@@ -120,11 +122,11 @@
                 content.classList.toggle('collapsed');
             });
         });
-        document.getElementById("bell-icon").addEventListener("click", function() {
+        document.getElementById("bell-icon").addEventListener("click", function () {
             var notifications = document.getElementById("notifications");
             notifications.style.display = notifications.style.display === "block" ? "none" : "block";
         });
-        
+
     </script>
 </body>
 

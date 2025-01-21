@@ -99,7 +99,8 @@
     margin-bottom: 30px;
 }
 
-.service-table th, .service-table td {
+.service-table th,
+.service-table td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
@@ -155,7 +156,8 @@
     background-color: #e0e0e0;
 }
 
-.pagination .prev-btn, .pagination .next-btn {
+.pagination .prev-btn,
+.pagination .next-btn {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -164,9 +166,11 @@
     border-radius: 8px;
 }
 
-.pagination .prev-btn:hover, .pagination .next-btn:hover {
+.pagination .prev-btn:hover,
+.pagination .next-btn:hover {
     background-color: #45a049;
 }
+
 .form-item {
     flex: 1;
     min-width: 200px;
