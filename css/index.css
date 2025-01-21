@@ -7,6 +7,15 @@ body {
     overflow-y: auto;
 }
 
+.left-menu .logo {
+    width: 100px; 
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px; 
+    display: block; 
+    padding: 10px 0;    
+}
+
 .left-menu {
     width: 250px;
     background-color: #222;
@@ -30,8 +39,8 @@ body {
     margin-bottom: 20px;
 }
 
-.left-menu.collapsed h2 {
-    display: none;
+.left-menu.collapsed img {
+    width: 70px;
 }
 
 .left-menu h3 {
