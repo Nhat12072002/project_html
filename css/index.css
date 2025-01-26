@@ -89,7 +89,7 @@ body {
     flex-grow: 1;
 }
 
-.left-menu.collapsed ul li a {
+.left-menu.collapsed ul li {
     display: none;
 }
 
@@ -928,5 +928,27 @@ button:focus {
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+@media (max-width: 768px) {
+    .account-info {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .user-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-info {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .user-details {
+        gap: 10px;
     }
 }
