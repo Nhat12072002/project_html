@@ -317,10 +317,15 @@ Bearer fake-token-1234567890abcdef
                 const toggleButton = document.querySelector('.menu-toggle');
                 const leftMenu = document.querySelector('.left-menu');
                 const content = document.querySelector('.content');
-
+                const menuItems = document.querySelectorAll('.left-menu ul li');
                 toggleButton.addEventListener('click', () => {
                     leftMenu.classList.toggle('collapsed');
                     content.classList.toggle('collapsed');
+                    if (leftMenu.classList.contains('collapsed')) {
+                        menuItems.forEach(item => item.style.display = 'none');
+                    } else {
+                        menuItems.forEach(item => item.style.display = 'flex');
+                    }
                 });
 
                 const menuLinks = document.querySelectorAll('.horizontal-menu a');

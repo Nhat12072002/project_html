@@ -195,3 +195,73 @@
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+@media (max-width: 768px) {
+    .filter-section {
+        flex-direction: column;
+    }
+
+    .form-item {
+        min-width: 100%;
+    }
+
+    .search-item input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .service-table th,
+    .service-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .btn-rent {
+        width: 100%;
+    }
+
+
+    .pagination button {
+        flex: 1 1 45%;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-list-block {
+        padding: 15px;
+    }
+
+    .custom-select label {
+        font-size: 12px;
+    }
+
+    .custom-select select {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .search-item input {
+        font-size: 12px;
+    }
+
+    .btn-rent {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .service-table th,
+    .service-table td {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .btn-add {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .pagination button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}

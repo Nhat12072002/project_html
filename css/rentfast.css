@@ -103,21 +103,6 @@
     z-index: 999;
 }
 
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .form-item {
-        margin-bottom: 10px;
-    }
-
-    .dialog-content {
-        gap: 20px;
-    }
-}
-
 .warning-block {
     display: flex;
     background-color: #fff3cd;
@@ -224,4 +209,129 @@
 
 .add-option i {
     margin-right: 5px;
+}
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .form-item {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .dialog {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .dialog-content {
+        gap: 10px;
+    }
+
+    .dialog-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .warning-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .warning-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .warning-content ul {
+        margin-left: 0;
+        padding-left: 20px;
+    }
+
+    .message-table-container {
+        padding: 10px;
+    }
+
+    #message-table th,
+    #message-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .info-text {
+        font-size: 12px;
+    }
+
+    .add-option {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex-container {
+        padding: 10px;
+    }
+
+    .form-item select,
+    .form-item button,
+    .form-item input {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .dialog {
+        padding: 15px;
+    }
+
+    .dialog input {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .warning-block {
+        padding: 10px;
+    }
+
+    .warning-icon {
+        font-size: 20px;
+    }
+
+    .warning-content strong {
+        font-size: 14px;
+    }
+
+    .warning-content ul {
+        padding-left: 15px;
+    }
+
+    .message-table-container {
+        padding: 8px;
+    }
+
+    #message-table th,
+    #message-table td {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .info-text {
+        font-size: 10px;
+    }
+
+    .add-option {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
 }

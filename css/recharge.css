@@ -234,3 +234,67 @@ table tr:hover {
         transform: scale(1);
     }
 }
+@media (max-width: 768px) {
+    .methods-container {
+        flex-direction: column;
+    }
+
+    .method {
+        flex: 1 1 100%;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters div {
+        width: 100%;
+    }
+
+    .filters button {
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .dialog-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-methods h2 {
+        font-size: 20px;
+    }
+
+    .method h3 {
+        font-size: 16px;
+    }
+
+    .method p,
+    .method ul li {
+        font-size: 12px;
+    }
+
+    .track-order button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .dialog-header h3 {
+        font-size: 18px;
+    }
+
+    .dialog-header button {
+        font-size: 16px;
+    }
+
+    .pagination button {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}

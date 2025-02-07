@@ -9,12 +9,10 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-
 .form-item {
     flex: 1;
     min-width: 200px;
 }
-
 .form-item select,
 .form-item button,
 .form-item input {
@@ -25,14 +23,12 @@
     font-size: 14px;
     transition: all 0.3s ease;
 }
-
 .form-item select:focus,
 .form-item input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
 .btn {
     padding: 12px;
     background-color: #007bff;
@@ -43,15 +39,12 @@
     font-size: 14px;
     transition: background-color 0.3s ease;
 }
-
 .btn:hover {
     background-color: #0056b3;
 }
-
 .btn:active {
     background-color: #004085;
 }
-
 .dialog {
     display: none;
     position: fixed;
@@ -66,18 +59,15 @@
     width: 100%;
     z-index: 1000;
 }
-
 .dialog-content {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
 .dialog-actions {
     display: flex;
     justify-content: space-between;
 }
-
 .dialog input {
     padding: 12px;
     border-radius: 8px;
@@ -85,13 +75,11 @@
     font-size: 14px;
     transition: all 0.3s ease;
 }
-
 .dialog input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
 .dialog-overlay {
     position: fixed;
     top: 0;
@@ -101,21 +89,6 @@
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
     z-index: 999;
-}
-
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .form-item {
-        margin-bottom: 10px;
-    }
-
-    .dialog-content {
-        gap: 20px;
-    }
 }
 
 .warning-block {
@@ -129,90 +102,74 @@
     font-size: 14px;
     color: #856404;
 }
-
 .warning-icon {
     font-size: 24px;
     margin-right: 15px;
     color: #f0ad4e;
 }
-
 .warning-content {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .warning-content strong {
     font-size: 16px;
     font-weight: bold;
 }
-
 .warning-content ul {
     list-style-type: disc;
     margin-left: 20px;
 }
-
 .warning-content ul li {
     margin-bottom: 5px;
 }
-
 .warning-block:hover {
     background-color: #ffeeba;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-
 .message-table-container {
     margin-top: 20px;
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 8px;
 }
-
 .info-text {
     font-size: 14px;
     color: #555;
     margin-bottom: 15px;
     font-style: italic;
 }
-
 #message-table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ddd;
 }
-
 #message-table th,
 #message-table td {
     padding: 10px;
     text-align: center;
     border: 1px solid #ddd;
 }
-
 #message-table th {
     background-color: #4CAF50;
     color: white;
 }
-
 .message-row {
     background-color: #f4f4f4;
 }
-
 .message-row:hover {
     background-color: #e0e0e0;
 }
-
 .phone-number,
 .code {
     cursor: pointer;
     color: #007bff;
     text-decoration: underline;
 }
-
 .phone-number:hover,
 .code:hover {
     color: #0056b3;
 }
-
 .add-option {
     background-color: #4CAF50;
     color: white;
@@ -221,7 +178,120 @@
     border-radius: 5px;
     cursor: pointer;
 }
-
 .add-option i {
     margin-right: 5px;
+}
+/* Các style hiện tại của bạn */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-item {
+        margin-bottom: 10px;
+    }
+
+    .dialog-content {
+        gap: 20px;
+    }
+
+    .warning-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .warning-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .warning-content ul {
+        margin-left: 0;
+        padding-left: 20px;
+    }
+
+    .message-table-container {
+        padding: 10px;
+    }
+
+    #message-table th,
+    #message-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .info-text {
+        font-size: 12px;
+    }
+
+    .add-option {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex-container {
+        padding: 15px;
+    }
+
+    .form-item select,
+    .form-item button,
+    .form-item input {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .dialog {
+        padding: 20px;
+    }
+
+    .dialog input {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .warning-block {
+        padding: 15px;
+    }
+
+    .warning-icon {
+        font-size: 20px;
+    }
+
+    .warning-content strong {
+        font-size: 14px;
+    }
+
+    .warning-content ul {
+        padding-left: 15px;
+    }
+
+    .message-table-container {
+        padding: 10px;
+    }
+
+    #message-table th,
+    #message-table td {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .info-text {
+        font-size: 10px;
+    }
+
+    .add-option {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
 }
